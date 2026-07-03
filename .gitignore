@@ -37,7 +37,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# prisma
+# large media (hosted on Google Drive)
+public/loveflix/proposal.mp4
 *.db
 *.db-journal
 prisma/.env

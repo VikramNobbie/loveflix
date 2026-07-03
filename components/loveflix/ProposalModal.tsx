@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import confetti from 'canvas-confetti';
-import { getProposalQuestion, loveflixConfig } from '@/config/loveflix';
+import { getProposalQuestion, isEmbedVideo, isLocalVideo, loveflixConfig } from '@/config/loveflix';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 
 type ProposalModalProps = {
@@ -81,6 +81,7 @@ function RunawayNoButton() {
 
 export default function ProposalModal({ isOpen, onClose }: ProposalModalProps) {
   const [saidYes, setSaidYes] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleYes = useCallback(() => {
     setSaidYes(true);
@@ -106,9 +107,16 @@ export default function ProposalModal({ isOpen, onClose }: ProposalModalProps) {
     };
   }, [isOpen, onClose]);
 
+  useEffect(() => {
+    if (isOpen && isLocalVideo(loveflixConfig.proposalVideoUrl)) {
+      videoRef.current?.play().catch(() => undefined);
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
-  const hasVideo = Boolean(loveflixConfig.proposalVideoUrl);
+  const videoUrl = loveflixConfig.proposalVideoUrl;
+  const hasVideo = Boolean(videoUrl);
 
   return (
     <div
@@ -137,9 +145,18 @@ export default function ProposalModal({ isOpen, onClose }: ProposalModalProps) {
 
         {/* Video or slideshow placeholder */}
         <div className="relative aspect-video w-full bg-neutral-800">
-          {hasVideo ? (
+          {hasVideo && isLocalVideo(videoUrl) ? (
+            <video
+              ref={videoRef}
+              src={videoUrl}
+              className="h-full w-full object-contain"
+              controls
+              autoPlay
+              playsInline
+            />
+          ) : hasVideo && isEmbedVideo(videoUrl) ? (
             <iframe
-              src={loveflixConfig.proposalVideoUrl}
+              src={videoUrl}
               title="Our love story"
               className="h-full w-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
