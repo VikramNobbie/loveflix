@@ -1,0 +1,41 @@
+{
+  "name": "loveflix",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --dir .",
+    "lint:fix": "next lint --dir . --fix"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "@prisma/client": "^5.3.1",
+    "@tailwindcss/forms": "^0.5.6",
+    "@types/node": "20.8.0",
+    "@types/canvas-confetti": "^1.6.4",
+    "@types/react": "18.2.24",
+    "@types/react-dom": "18.2.8",
+    "autoprefixer": "^10.4.16",
+    "canvas-confetti": "^1.9.3",
+    "cssnano": "^6.0.1",
+    "eslint": "8.50.0",
+    "eslint-config-next": "13.5.3",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "hls.js": "^1.4.12",
+    "media-chrome": "^1.4.2",
+    "next": "13.5.3",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "prisma": "^5.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "^3.3.3",
+    "ts-invariant": "^0.10.3",
+    "typescript": "5.2.2",
+    "zod": "^3.22.2"
+  }
+}

@@ -1,0 +1,27 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_PRISMA_URL") // uses connection pooling
+  directUrl         = env("DATABASE_URL_NON_POOLING") // uses a direct connection
+  shadowDatabaseUrl = env("DATABASE_URL_NON_POOLING") // used for migrations
+}
+
+model Movie {
+  id         Int        @id
+  title      String
+  m3u8       String?
+  categories Category[]
+}
+
+model Category {
+  id     Int     @id @default(autoincrement())
+  title  String  @unique
+  movies Movie[]
+  order  Int     @default(0)
+}
