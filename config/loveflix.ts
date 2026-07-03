@@ -3,6 +3,12 @@
  * Replace placeholder names, images, and video URL with your own content.
  */
 
+/** Prefix public assets for GitHub Pages (/loveflix) vs local (/). */
+function asset(path: string): string {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+  return `${base}${path}`;
+}
+
 export type MemoryCard = {
   id: string;
   title: string;
@@ -19,38 +25,38 @@ export const loveflixConfig = {
   heroDescription:
     'From our first laugh to every little adventure — this is our story, told one beautiful moment at a time.',
 
-  heroImage: '/hero.jpg',
+  heroImage: asset('/hero.jpg'),
 
   profiles: {
     her: {
       name: 'Kav',
-      avatar: '/profiles/her.jpg',
+      avatar: asset('/profiles/her.jpg'),
       emoji: '💕',
     },
     you: {
       name: 'Vikram',
-      avatar: '/profiles/you.jpg',
+      avatar: asset('/profiles/you.jpg'),
       emoji: '😎',
     },
   },
 
   trendingRelationships: [
-    { id: 'mem-1', title: 'Us', image: '/memories/memory-1.jpg' },
-    { id: 'mem-2', title: 'Together', image: '/memories/memory-2.jpg' },
-    { id: 'mem-3', title: 'Adventures', image: '/memories/memory-3.jpg' },
-    { id: 'mem-4', title: 'Moments', image: '/memories/memory-4.jpg' },
-    { id: 'mem-5', title: 'Memories', image: '/memories/memory-5.jpg' },
+    { id: 'mem-1', title: 'Us', image: asset('/memories/memory-1.jpg') },
+    { id: 'mem-2', title: 'Together', image: asset('/memories/memory-2.jpg') },
+    { id: 'mem-3', title: 'Adventures', image: asset('/memories/memory-3.jpg') },
+    { id: 'mem-4', title: 'Moments', image: asset('/memories/memory-4.jpg') },
+    { id: 'mem-5', title: 'Memories', image: asset('/memories/memory-5.jpg') },
   ] satisfies MemoryCard[],
 
   romanticComedies: [
-    { id: 'fun-1', title: 'Inside Joke #1', image: '/comedies/comedy-1.jpg' },
-    { id: 'fun-2', title: 'Inside Joke #2', image: '/comedies/comedy-2.jpg' },
+    { id: 'fun-1', title: 'Inside Joke #1', image: asset('/comedies/comedy-1.jpg') },
+    { id: 'fun-2', title: 'Inside Joke #2', image: asset('/comedies/comedy-2.jpg') },
   ] satisfies MemoryCard[],
 
   proposalMovie: {
     id: 'the-proposal',
     title: 'The Proposal',
-    image: '/proposal-poster.jpg',
+    image: asset('/proposal-poster.jpg'),
     tagline: 'A love story years in the making…',
   },
 
