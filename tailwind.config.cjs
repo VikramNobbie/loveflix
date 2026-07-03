@@ -13,8 +13,8 @@ module.exports = {
         outline: 'inset 0 0 0 1px hsl(0deg 0% 100% / 10%)',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
-        netflix: ['var(--font-netflix)', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        netflix: ['"Bebas Neue"', 'Impact', 'Arial Narrow Bold', 'sans-serif'],
       },
       colors: {
         'netflix-red': '#E50914',

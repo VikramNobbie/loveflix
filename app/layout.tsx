@@ -1,17 +1,5 @@
 import React from 'react';
-import { Bebas_Neue, Inter } from 'next/font/google';
 import '@/app/globals.css';
-
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-});
-
-const bebasNeue = Bebas_Neue({
-  variable: '--font-netflix',
-  weight: '400',
-  subsets: ['latin'],
-});
 
 export const metadata = {
   title: 'LOVEFLIX',
@@ -25,7 +13,15 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${bebasNeue.variable}`}>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-full overflow-x-hidden bg-neutral-950 font-sans text-neutral-50 antialiased">
         <main>{children}</main>
       </body>
