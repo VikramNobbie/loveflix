@@ -19,38 +19,38 @@ export const loveflixConfig = {
   heroDescription:
     'From our first laugh to every little adventure — this is our story, told one beautiful moment at a time.',
 
-  heroImage: '/loveflix/hero.jpg',
+  heroImage: '/hero.jpg',
 
   profiles: {
     her: {
       name: 'Kav',
-      avatar: '/loveflix/profiles/her.jpg',
+      avatar: '/profiles/her.jpg',
       emoji: '💕',
     },
     you: {
       name: 'Vikram',
-      avatar: '/loveflix/profiles/you.jpg',
+      avatar: '/profiles/you.jpg',
       emoji: '😎',
     },
   },
 
   trendingRelationships: [
-    { id: 'mem-1', title: 'Us', image: '/loveflix/memories/memory-1.jpg' },
-    { id: 'mem-2', title: 'Together', image: '/loveflix/memories/memory-2.jpg' },
-    { id: 'mem-3', title: 'Adventures', image: '/loveflix/memories/memory-3.jpg' },
-    { id: 'mem-4', title: 'Moments', image: '/loveflix/memories/memory-4.jpg' },
-    { id: 'mem-5', title: 'Memories', image: '/loveflix/memories/memory-5.jpg' },
+    { id: 'mem-1', title: 'Us', image: '/memories/memory-1.jpg' },
+    { id: 'mem-2', title: 'Together', image: '/memories/memory-2.jpg' },
+    { id: 'mem-3', title: 'Adventures', image: '/memories/memory-3.jpg' },
+    { id: 'mem-4', title: 'Moments', image: '/memories/memory-4.jpg' },
+    { id: 'mem-5', title: 'Memories', image: '/memories/memory-5.jpg' },
   ] satisfies MemoryCard[],
 
   romanticComedies: [
-    { id: 'fun-1', title: 'Inside Joke #1', image: '/loveflix/comedies/comedy-1.jpg' },
-    { id: 'fun-2', title: 'Inside Joke #2', image: '/loveflix/comedies/comedy-2.jpg' },
+    { id: 'fun-1', title: 'Inside Joke #1', image: '/comedies/comedy-1.jpg' },
+    { id: 'fun-2', title: 'Inside Joke #2', image: '/comedies/comedy-2.jpg' },
   ] satisfies MemoryCard[],
 
   proposalMovie: {
     id: 'the-proposal',
     title: 'The Proposal',
-    image: '/loveflix/proposal-poster.jpg',
+    image: '/proposal-poster.jpg',
     tagline: 'A love story years in the making…',
   },
 
